@@ -4,7 +4,7 @@ using namespace std;
 // Replace Bits in N by M
 // You are given two 32-bit numbers, N and M, and two bit position i and j.
 // Write a method to set all bits between i and j equal to M.
-// M (becomes a substring of N locationed at and starting at j)
+// (M becomes a substring of N locationed at and starting at j)
 
 // Example:
 // N = 10000000000;
