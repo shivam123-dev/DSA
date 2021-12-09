@@ -21,12 +21,18 @@ int updateithbit(int n, int i, int v){
     int mask = (v << i);
     return n|mask;  
 }
+// for clearing last I bits
+int clearlastibits(int n, int i){
+    int mask = (-1 << i);
+    return n&mask;
+}
 int main(){
     int n, pos;
     cin >> n >> pos;
     // cout << getithbit(n, pos) << endl;
     // cout << setithbit(n, pos) << endl;
     // cout << clearithbit(n, pos) << endl;
-    cout << updateithbit(n, pos, 1) << endl;
+    // cout << updateithbit(n, pos, 1) << endl;
+    cout << clearlastibits(n, pos) << endl;
     return 0;    
 }
