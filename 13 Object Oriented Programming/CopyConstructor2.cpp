@@ -16,7 +16,7 @@ public:
     // Creating our own Copy Constructor
     Product(Product &X){
         id = X.id;
-        strcpy(name, X.name);  // this is not a correct way
+        strcpy(name, X.name);  
         // name = X.name;
     }
     void showDetails()
