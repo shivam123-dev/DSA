@@ -54,5 +54,9 @@ int main(){
     insertAtTail(head, 3);
     insertAtTail(head, 4);
     displayLL(head);
+    insertAtHead(head, 5);
+    displayLL(head);
+    insertInMiddle(head, 10, 2);
+    displayLL(head);
     return 0;
 }
