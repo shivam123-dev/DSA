@@ -88,7 +88,7 @@ int main()
     makeCycle(head, 4);
     if(detectCycle(head)){
         removeCycle(head);
-        displayLL(head);
     }
+    displayLL(head);
     return 0;
 }
