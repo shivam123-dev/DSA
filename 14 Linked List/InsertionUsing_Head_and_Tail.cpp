@@ -1,3 +1,4 @@
+// Using both head and tail pointers
 #include<iostream>
 using namespace std;
 class node{

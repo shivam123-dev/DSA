@@ -1,3 +1,4 @@
+// Using head pointer
 #include<iostream>
 using namespace std;
 class node{
