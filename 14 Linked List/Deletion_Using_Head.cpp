@@ -23,8 +23,9 @@ void deleteAtHead(node* &head){
         return;
     }
     node* temp = head;
-    head = temp->next;
+    head = head->next;
     cout << "Deleting " << temp->data << endl;
+    delete temp;
 }
 void deleteAtTail(node* &head){
     if(!head){
@@ -39,6 +40,7 @@ void deleteAtTail(node* &head){
     }
     cout << "Deleting " << nextNode->data << endl;
     temp->next = NULL;
+    delete nextNode;
 }
 void deleteInMiddle(node* &head, int pos){
     if(!head){
@@ -51,9 +53,9 @@ void deleteInMiddle(node* &head, int pos){
         nextNode = nextNode->next;
         temp = temp->next;
     }
-
     cout << "Deleting " << nextNode->data << endl;
     temp->next = nextNode->next;    
+    delete nextNode;
 }
 void displayLL(node* head){
     node* temp = head;
