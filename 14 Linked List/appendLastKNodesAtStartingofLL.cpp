@@ -34,13 +34,13 @@ node* append(node* &head, int k){
     node* newTail, *newHead;
     int count = 1;
     while(temp->next!=NULL){
-        temp = temp->next;
         if(count == (len-k)){
             newTail = temp;
         }
         else if(count == ((len-k)+1)){
             newHead = temp;
         }
+        temp = temp->next;
         count++;
     }
     node* tail = temp;
@@ -64,6 +64,7 @@ int main(){
     insertLL(head, 3);
     insertLL(head, 4);
     insertLL(head, 5);
+    insertLL(head, 6);
     displayLL(head);
     head = append(head, 3);
     displayLL(head);
