@@ -1,3 +1,4 @@
+// Detection and Removal of Cycle is based on Floyd's Algorithm
 #include <iostream>
 using namespace std;
 class node
