@@ -10,6 +10,12 @@ public:
         next = NULL;
     }
 };
+void insertAtHead(node *&head, int val)
+{
+    node *n = new node(val);
+    n->next = head;
+    head = n;
+}
 void insertAtTail(node* &head, int val){
     node* temp = new node(val);
     if(head == NULL){
@@ -21,6 +27,17 @@ void insertAtTail(node* &head, int val){
         n = n->next;
     }
     n->next = temp;
+}
+void insertInMiddle(node *&head, int val, int pos)
+{
+    node *temp = head;
+    node *n = new node(val);
+    while (temp->data != pos)
+    {
+        temp = temp->next;
+    }
+    n->next = temp->next;
+    temp->next = n;
 }
 void displayLL(node* head){
     node* temp = head;
