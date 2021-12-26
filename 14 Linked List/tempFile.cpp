@@ -1,3 +1,0 @@
-ast==slow){
-            return true;
-        }
