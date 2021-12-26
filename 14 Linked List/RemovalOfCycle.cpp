@@ -54,13 +54,16 @@ bool detectCycle(node* &head)
 }
 void removeCycle(node* &head){
     node *slow = head, *fast = head;
-    while (fast != NULL and fast->next != NULL){
+    do{
         slow = slow->next;
         fast = fast->next->next;
-        if (fast == slow){
-            fast->next = NULL;
-        }
+    }while(fast!=slow);
+    fast = head;
+    while(fast->next!=slow->next){
+        fast = fast->next;
+        slow = slow->next;
     }
+    slow->next = NULL;
 }
 void displayLL(node* head){
     node* temp = head;
