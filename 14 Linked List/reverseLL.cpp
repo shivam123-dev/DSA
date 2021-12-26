@@ -20,10 +20,17 @@ void insertLL(node* &head, int val){
         head = n;
     }
 }
-void reverseLL(node* &head){
-    node* prevNode = head;
-    node* nextNode = head->next;
-    node* temp = head;
+node* reverseLL(node* &head){
+    node* prevPtr = NULL;
+    node* currPtr = head;
+    node* nextPtr;
+    while(currPtr!=NULL){
+        nextPtr = currPtr->next;
+        currPtr->next = prevPtr;
+        prevPtr = currPtr;
+        currPtr = nextPtr;
+    }
+    return prevPtr;
 }
 void displayLL(node* head){
     node* temp = head;
@@ -34,5 +41,15 @@ void displayLL(node* head){
     cout << "NULL" << endl;
 }
 int main(){
-
+    node* head = NULL;
+    insertLL(head, 4);
+    insertLL(head, 3);
+    insertLL(head, 2);
+    insertLL(head, 1);
+    cout << "Given LL" << endl;
+    displayLL(head);
+    head = reverseLL(head);
+    cout << "Reversed LL" << endl;
+    displayLL(head);
+    return 0;
 }
