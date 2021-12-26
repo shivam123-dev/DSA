@@ -85,8 +85,9 @@ void deleteInMiddle(node* &head, int pos)
     while (nextNode->data != pos)
     {
         nextNode = nextNode->next;
+        temp = temp->next;
     }
-    cout << "Deleting " << temp->data << endl;
+    cout << "Deleting " << nextNode->data << endl;
     temp->next = nextNode->next;
 }
 int main()
