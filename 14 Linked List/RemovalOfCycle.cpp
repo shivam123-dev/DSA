@@ -36,6 +36,7 @@ void makeCycle(node* &head, int pos)
         count++;
         temp = temp->next;
     }
+    temp->next = startNode;
 }
 bool detectCycle(node* &head)
 {
@@ -82,6 +83,9 @@ int main()
     insertAtTail(head, 8);
     insertAtTail(head, 9);
     makeCycle(head, 4);
-    cout << detectCycle(head);
+    if(detectCycle(head)){
+        removeCycle(head);
+        displayLL(head);
+    }
     return 0;
 }
