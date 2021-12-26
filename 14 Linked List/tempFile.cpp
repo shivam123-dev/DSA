@@ -1,0 +1,3 @@
+ast==slow){
+            return true;
+        }

@@ -21,7 +21,7 @@ void insertAtTail(node* &head, int val){
 void makeCycle(node* &head, int pos){
     node* temp = head;
     node* startNode;
-    int count=0;
+    int count=1;
     while(temp->next!=NULL){
         if(count == pos){
             startNode = temp;
@@ -29,15 +29,16 @@ void makeCycle(node* &head, int pos){
         count++;
         temp = temp->next;
     }
+    temp->next = startNode;
 }
 bool detectCycle(node* &head){
     node* slow = head, *fast = head;
     while(fast!=NULL and fast->next!=NULL){
-        slow = slow->next;
-        fast = fast->next->next;
         if(fast==slow){
             return true;
         }
+        slow = slow->next;
+        fast = fast->next->next;
     }
     return false;
 }
