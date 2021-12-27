@@ -50,18 +50,29 @@ public:
 };
 int main()
 {
-    Queue q;
+    // Queue q(5);
+    // q.push(1);
+    // q.push(2);
+    // q.push(3);
+    // q.push(4);
+    // q.push(5);
+    // // q.display();
+    // // q.pop();
+    // // q.push(6);
+    // // cout << q.isFull() << endl;
+    // cout << q.isEmpty() << endl;
+
+    Queue q(7);
     q.push(1);
     q.push(2);
     q.push(3);
     q.push(4);
     q.push(5);
-    // q.display();
-    // q.pop();
-    // q.push(6);
-    // cout << q.isFull() << endl;
-    cout << q.isEmpty() << endl;
-
+    q.push(6);
+    q.push(7);
+    q.pop();
+    q.pop();
+    q.push(9);
     while(!q.isEmpty()){
         cout << q.Front() << " ";
         q.pop();
