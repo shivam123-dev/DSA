@@ -1,21 +1,26 @@
-#include<iostream>
-#include<stack>
+#include <iostream>
+#include <stack>
 using namespace std;
-void reverseSentence(string s){
+void reverseSentence(string s)
+{
     stack<string> st;
-    for(int i=0;i<s.length();i++){
+    for (int i = 0; i < s.length(); i++)
+    {
         string word = "";
-        while(i<s.length() and s[i]!=' '){
-            word+=s[i++];
+        while (i < s.length() and s[i] != ' ')
+        {
+            word += s[i++];
         }
         st.push(word);
     }
-    while(!st.empty()){
+    while (!st.empty())
+    {
         cout << st.top() << " ";
         st.pop();
     }
 }
-int main(){
+int main()
+{
     string s = "Hey, how are you doing?";
     reverseSentence(s);
     return 0;
