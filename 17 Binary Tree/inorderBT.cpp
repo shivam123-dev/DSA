@@ -29,8 +29,18 @@ void inOrderTraversal(node* root){
     cout << root->data << " ";
     inOrderTraversal(root->right);
 }
+int height(node* root){
+    if(root == NULL){
+        return 0;
+    }
+    int h1 = height(root->left);
+    int h2 = height(root->right);
+    return max(h1, h2)+1;
+}
 int main(){
     node* root = buildTree();
     inOrderTraversal(root);
+    cout << endl;
+    cout << height(root) << endl;
     return 0;
 }
