@@ -60,7 +60,7 @@ int diameter(node* root){
     int D1 = height(root->left) + height(root->right);
     int D2 = diameter(root->left);
     int D3 = diameter(root->right);
-    return max(D1, D2, D3);
+    return max(D1, max(D2, D3));
 }
 int main(){
     node* root = buildTree();
