@@ -62,10 +62,32 @@ int diameter(node* root){
     int D3 = diameter(root->right);
     return max(D1, max(D2, D3));
 }
+class HDPair{
+public:
+    int diameter;
+    int height;
+};
+HDPair optimisedD(node* root){
+    HDPair p;
+    if(root == NULL){
+        p.height = p.diameter = 0;
+        return p;
+    }
+    HDPair Left = optimisedD(root->left);
+    HDPair Right = optimisedD(root->right);
+    p.height = max(Left.height,Right.height) + 1;
+    int D1 = Left.height + Right.height;
+    int D2 = Left.diameter;
+    int D3 = Right.diameter;
+    p.diameter = max(D1, max(D2, D3));
+    return p;
+}
 int main(){
     node* root = buildTree();
     // levelOrder(root);
-    cout << endl;
-    cout << diameter(root) << endl;
+    // cout << endl;
+    // cout << diameter(root) << endl;
+    HDPair p = optimisedD(root);
+    cout << p.diameter << endl;
     return 0;
 }
