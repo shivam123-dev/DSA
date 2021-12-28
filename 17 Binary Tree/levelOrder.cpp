@@ -47,9 +47,25 @@ void levelOrder(node* root){
         }
     }
 }
+int height(node* root){
+    if(root == NULL){
+        return 0;
+    }
+    return 1+ max(height(root->left), height(root->right));
+}
+int diameter(node* root){
+    if(root == NULL){
+        return 0;
+    }
+    int D1 = height(root->left) + height(root->right);
+    int D2 = diameter(root->left);
+    int D3 = diameter(root->right);
+    return max(D1, D2, D3);
+}
 int main(){
     node* root = buildTree();
-    levelOrder(root);
+    // levelOrder(root);
     cout << endl;
+    cout << diameter(root) << endl;
     return 0;
 }
