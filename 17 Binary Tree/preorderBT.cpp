@@ -17,6 +17,7 @@ node* buildTree(){
     node* root = new node(data);
     root->left = buildTree();
     root->right = buildTree();
+    return root;
 }
 void printPreorder(node* root){
     if(root == NULL){
