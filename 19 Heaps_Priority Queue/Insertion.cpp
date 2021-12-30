@@ -1,19 +1,30 @@
-// Insertion in Max Heap
 #include<iostream>
 using namespace std;
-void heapify(int arr[], int n, int i){
+// Max Heap
+void heapifyMax(int arr[], int n, int i){
     int parent = (i-1)/2;
     if(arr[parent]>0){
         if(arr[i] > arr[parent]){
             swap(arr[i], arr[parent]);
-            heapify(arr, n, parent);
+            heapifyMax(arr, n, parent);
+        }
+    }
+}
+// Min Heap
+void heapifyMin(int arr[], int n, int i){
+    int parent = (i-1)/2;
+    if(arr[parent]>0){
+        if(arr[i] < arr[parent]){
+            swap(arr[i], arr[parent]);
+            heapifyMin(arr, n, parent);
         }
     }
 }
 void insertNode(int arr[], int &n, int key){
     n = n+1;
     arr[n-1] = key;
-    heapify(arr, n, n-1);
+    // heapifyMax(arr, n, n-1);  // for max heap insertion
+    heapifyMin(arr, n, n-1);  // for min heap insertion
 }
 void printArray(int arr[], int n){
     for(int i=0;i<n;i++){
