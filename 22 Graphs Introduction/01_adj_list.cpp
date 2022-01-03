@@ -28,7 +28,6 @@ public:
 int main(){
     Graph g(6);
     g.insert(0, 1);
-    g.insert(0, 4);
     g.insert(2, 1);
     g.insert(3, 4);
     g.insert(4, 5);
